@@ -8,6 +8,7 @@ public class Main {
         int n = scanner.nextInt();
 
         if(n<5){
+            System.out.println(n*n);
             System.out.println("tiny");
 
         }
