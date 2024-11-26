@@ -14,7 +14,7 @@ public class Main {
         else if(a >= 1000){
             System.out.println("mask");
         }
-        else if(a > 0){
+        else if(a >=500){
             System.out.println("pen");
         }
         else{
