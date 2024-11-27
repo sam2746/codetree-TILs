@@ -40,13 +40,13 @@ public class Main {
                 break;
             case "/":
                 if (b == 0) {
-                    System.out.println("false"); // 0으로 나눌 경우 false
+                    System.out.println("False"); // 0으로 나눌 경우 false
                 } else {
                     div(a, b);
                 }
                 break;
             default:
-                System.out.println("false"); // 올바르지 않은 연산자
+                System.out.println("False"); // 올바르지 않은 연산자
         }
     }
 
