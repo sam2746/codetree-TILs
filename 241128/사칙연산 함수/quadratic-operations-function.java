@@ -5,20 +5,48 @@ public class Main {
         // 입력 스캐너
         Scanner scanner = new Scanner(System.in);
 
-        String line = scanner.nextLine(); // 입력 받기
-        String operand = line.split(" ")[1]; // 연산자 추출
-        int a = Integer.parseInt(line.split(" ")[0]); // 첫 번째 피연산자
-        int b = Integer.parseInt(line.split(" ")[2]); // 두 번째 피연산자
+        // 한 줄 입력받기
+        String line = scanner.nextLine();
+
+        // 입력 값이 올바른지 검사
+        String[] parts = line.split(" ");
+        if (parts.length != 3) { // 피연산자 2개와 연산자 1개로 구성되어야 함
+            System.out.println("false");
+            return;
+        }
+
+        // 피연산자와 연산자 추출
+        String operand = parts[1];
+        int a, b;
+
+        try {
+            a = Integer.parseInt(parts[0]);
+            b = Integer.parseInt(parts[2]);
+        } catch (NumberFormatException e) { // 피연산자가 숫자가 아닌 경우
+            System.out.println("false");
+            return;
+        }
 
         // 연산 수행
-        if (operand.equals("+")) {
-            sum(a, b);
-        } else if (operand.equals("-")) {
-            sub(a, b);
-        } else if (operand.equals("*")) {
-            mul(a, b);
-        } else {
-            div(a, b);
+        switch (operand) {
+            case "+":
+                sum(a, b);
+                break;
+            case "-":
+                sub(a, b);
+                break;
+            case "*":
+                mul(a, b);
+                break;
+            case "/":
+                if (b == 0) {
+                    System.out.println("false"); // 0으로 나눌 경우 false
+                } else {
+                    div(a, b);
+                }
+                break;
+            default:
+                System.out.println("false"); // 올바르지 않은 연산자
         }
     }
 
@@ -35,10 +63,6 @@ public class Main {
     }
 
     public static void div(int a, int b) {
-        if (b != 0) {
-            System.out.println(a + " / " + b + " = " + (a / b));
-        } else {
-            System.out.println("Error: Division by zero is not allowed.");
-        }
+        System.out.println(a + " / " + b + " = " + (a / b));
     }
 }
