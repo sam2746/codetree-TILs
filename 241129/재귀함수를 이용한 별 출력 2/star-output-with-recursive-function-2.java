@@ -32,7 +32,7 @@ public class Main {
         if(k==5){
             return;
         }
-        for(int i = n-k-1;i<n;i++){
+        for(int i = n-k;i<=n;i++){
             System.out.print("* ");
         }
         System.out.println("");
