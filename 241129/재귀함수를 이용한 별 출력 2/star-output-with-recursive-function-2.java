@@ -29,16 +29,14 @@ public class Main {
     }
 
     public static void printStarDesc(int n, int k){
-        if(k==5){
+        if(k>=n){
             return;
         }
-        for(int i = n-k;i<=n;i++){
+        for(int i = n-k-1;i<n;i++){
             System.out.print("* ");
         }
         System.out.println("");
-        n--;
-        k++;
-        printStarDesc(n, k);
+        printStarDesc(n, k+1);
     }
 
 
