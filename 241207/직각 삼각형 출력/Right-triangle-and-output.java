@@ -7,9 +7,7 @@ public class Main {
 
         int n = scanner.nextInt();
 
-        int iter = (n/2)*2 + 1;
-
-        for(int i = 0;i<iter*2;i += 2){
+        for(int i = 0;i<2*n-1;i += 2){
             for(int j = 0;j<=i;j++){
                 System.out.print("*");
             }
