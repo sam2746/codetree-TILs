@@ -7,7 +7,7 @@ public class Main {
 
         int n = scanner.nextInt();
 
-        int[] lining = new int[201];
+        int[] lining = new int[200];
         // -100에서 100까지의 영역 안에서 그릴 수 있는데 음수 범위 표현하기 어려우므로 offset 사용
 
         // 반복적으로 입력을 받고 lining에 표시하는 코드
@@ -16,9 +16,11 @@ public class Main {
             int b = scanner.nextInt();
 
             //여기서부터 배열에 접근하므로 offset으로 변환해주는 과정 필요
-            //구간으로 생각하라! index가 2라면, 2~3 사이의 범위를 표현한다고 이해 
+            //구간으로 생각하라! index가 2라면, 2~3 사이의 범위를 표현한다고 이해
+            //a로 -100이 들어오면 칠함, b로 -100이 들어오면 안 칠함 비슷하게 a로 100이 들어오면 안 칠함
             
-            for(int x1 = a+100;x1<=b+100;x1++){
+            for(int x1 = a+100;x1<=b+99;x1++){
+                
                 lining[x1] ++;
             }
         } 
