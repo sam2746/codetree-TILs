@@ -11,7 +11,7 @@ public class Main {
 
         int duemin = 0;
 
-        if(a >= 11){
+        if(a > 11){
             duemin += (a-11)*60*24 + 60*b + c - 671;
             System.out.println(duemin);
         }else if(a == 11){ //예외처리 위해 나눔
