@@ -10,7 +10,7 @@ public class Main {
         int[] digits = new int[20];
         int cnt = 0;
 
-        while(ture){
+        while(true){
             if(n<2){
                 digits[cnt++] = n;
                 break;
