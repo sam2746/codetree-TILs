@@ -11,7 +11,7 @@ public class Main {
         int N = scanner.nextInt();
         int K = scanner.nextInt();
 
-        scanner.nextLine();
+  
 
         int[] blockStack = new int[N];
 
@@ -19,10 +19,9 @@ public class Main {
             //반복해서 A, B 입력받고 list에 쌓기
             int A = scanner.nextInt();
             int B = scanner.nextInt();
-            scanner.nextLine();
 
             for(int k = A;k<=B;k++){
-                blockStack[k] ++;
+                blockStack[k-1] ++;
             }
         }
 
