@@ -38,20 +38,20 @@ public class Main {
 
     }
 
-    public static int record(int num, char direction, int[] arr, int currentIdx){
-        if(direction == 'L'){
-            for(int i = currentIdx-1;i>=currentIdx-num;i--){
-                arr[i] ++;
-            }
-            currentIdx -= num;
-        }else{
-            for(int i = currentIdx+1;i<=currentIdx+num;i++){
-                arr[i] ++;
-            }
-            currentIdx += num;
+    public static int record(int num, char direction, int[] arr, int currentIdx) {
+    if (direction == 'L') {
+        // 왼쪽 이동: currentIdx-1부터 currentIdx-num까지 기록
+        for (int i = currentIdx - 1; i >= currentIdx - num; i--) {
+            arr[i]++;
         }
-
-        return currentIdx;
-        
+        currentIdx -= num; // 최종 위치 업데이트
+    } else {
+        // 오른쪽 이동: currentIdx+1부터 currentIdx+num까지 기록
+        for (int i = currentIdx + 1; i <= currentIdx + num; i++) {
+            arr[i]++;
+        }
+        currentIdx += num; // 최종 위치 업데이트
     }
+    return currentIdx; // 최종 위치 반환
+}
 }
